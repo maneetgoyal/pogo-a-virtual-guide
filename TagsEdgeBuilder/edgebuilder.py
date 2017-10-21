@@ -65,3 +65,6 @@ batchitup()
 # Create an EdgeLists named folder in the current directory.
 # Modify line 52 so that it contains the right file numbers (in str format only).
 # Run the function.
+# Once all the output files are obtained in EdgeLists folder. Run the command
+# contained in textmerger.txt from command line (Windows only), with EdgeLists
+# as the current directory.
