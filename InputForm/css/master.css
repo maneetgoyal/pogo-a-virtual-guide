@@ -1,0 +1,11 @@
+div{
+  border: 1px solid black;
+}
+
+#jumbo{
+  margin: 0;
+}
+
+#inputform, #resultsection{
+  display: inline-block;
+}
