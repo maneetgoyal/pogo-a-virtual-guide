@@ -1,0 +1,22 @@
+// Output
+.mode csv
+.headers on
+.output tags15258.csv
+select * from newtag;
+.quit
+
+// Undefined Tags Count
+select count (*) from newtag where lower(class) like "nd";
+
+// Tag name selection
+select * from newtag where lower(tag_name) like
+
+// Package Update
+UPDATE newtag SET Class = 'Package' where
+UPDATE newtag SET Class = 'OS' where
+UPDATE newtag SET Class = 'Language' where
+UPDATE newtag SET Class = 'Package' where id =
+UPDATE newtag SET Class = 'OS' where id =
+
+// Package Update
+UPDATE newtag SET Class = 'OS' where
