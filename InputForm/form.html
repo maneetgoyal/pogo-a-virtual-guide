@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pogo</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../media/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../media/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../media/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../media/favicons/manifest.json">
+    <link rel="mask-icon" href="../media/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+    <!-- Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+
+    <!-- My files -->
+    <script type="text/javascript" src="../script/main.js"></script>
+    <link rel="stylesheet" href="../css/master.css">
+
+  </head>
+  <body>
+    <div class="jumbotron" id="jumbo">
+      <div class="container-fluid">
+        <h1>Pogo</h1>
+        <p>Your Programming Project Advisor</p>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="col-md-4 col-lg-4 col-xl-4" id="inputform">
+  
+  <input list="OS" name="OS" align="right" width="48" height="48">
+  <datalist id="OS">
+  	<option value="Select the OS">
+    <option value="Windows">
+    <option value="Linux">
+    <option value="MacOS">
+   
+  </datalist>
+<input list="packages" name="packages" align="right" width="48" height="48">
+  <datalist id="packages">
+  	<option value="Select the package">
+    <option value="d3.js">
+    <option value="numpy">
+    	</datalist>
+
+<input list="features & concepts" name="features & concepts" align="right" width="48" height="48">
+  <datalist id="features & concepts">
+  	<option value="select features & concepts">
+    
+   
+  </datalist>
+  <button type="submit" form="form1" value="Submit">Submit</button>
+</div>
+        
+      </div>
+      <div class="col-md-7 col-lg-7 col-xl-7" id="resultsection">
+       
+      </div>
+    </div>
+  </body>
+</html>
