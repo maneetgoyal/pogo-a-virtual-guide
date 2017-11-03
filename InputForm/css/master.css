@@ -1,11 +1,21 @@
 div{
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 
 #jumbo{
   margin: 0;
+  background-image: url("../media/monkey/Monkey(4).png");
+  background-color:white;
+  background-repeat: no-repeat;
+  background-size: 10%;
+  background-position: right center;
+  padding: auto;
 }
 
 #inputform, #resultsection{
-  display: inline-block;
+  display: inline-table;
+}
+
+#resultsection{
+  padding-left: 5%;
 }

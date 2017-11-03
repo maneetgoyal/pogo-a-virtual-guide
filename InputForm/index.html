@@ -16,9 +16,6 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -41,70 +38,90 @@
 </style>
   </head>
   <body>
+
     <div class="jumbotron" id="jumbo">
       <div class="container-fluid">
         <h1>Pogo</h1>
         <p>Your Programming Project Advisor</p>
       </div>
     </div>
+
     <div class="container-fluid">
       <div class="col-md-4 col-lg-4 col-xl-4" id="inputform">
-        
-    <div class="form-group">
-      <label for="inputHorizontalSuccess">OS</label>
-        <select class="form-control multiple"  id="exampleSelect1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="exampleSelect1">Language</label>
-        <select class="form-control" id="exampleSelect2">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="exampleSelect1">Programs or Packages</label>
-        <select class="form-control" id="exampleSelect3">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="exampleSelect1">Features or Concepts</label>
-        <select class="form-control" id="exampleSelect4">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
+        <div class="form-group">
+          <label for="idOS">OS</label>
+            <select class="form-control"  id="idOS">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="idLang">Language</label>
+            <select class="form-control" id="idLang">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="idProg">Programs or Packages</label>
+            <select class="form-control" id="idProg">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="idConcep">Features or Concepts</label>
+            <select class="form-control" id="idConcep">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Jump</button>
       </div>
-        
-    </div>
-    <div class="col-md-7 col-lg-7 col-xl-7" id="resultsection">
-       
-    </div>
-    <script>
-        $(document).ready(function() { 
-          //$("#e19").select2({ maximumSelectionSize: 3 });
-        //$("#exampleSelect1").select2({
-        //placeholder: "Select a State"
-      //});
-        });
 
-    </script>
+      <div class="col-md-7 col-lg-7 col-xl-7 table-responsive-md table-responsive-lg table-responsive-xl" id="resultsection">
+        <p style="text-align: center;">You can pick the suggestions below to refine your search.</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Packages/Services</th>
+              <th>Features/Concepts</th>
+              <th>Mixed Bag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sugestion A1</td>
+              <td>Sugestion B1</td>
+              <td>Sugestion C1</td>
+            </tr>
+            <tr>
+              <td>Sugestion A2</td>
+              <td>Sugestion B2</td>
+              <td>Sugestion C3</td>
+            </tr>
+            <tr>
+              <td>Sugestion A3</td>
+              <td>Sugestion B2</td>
+              <td>Sugestion C3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
   </body>
 </html>
