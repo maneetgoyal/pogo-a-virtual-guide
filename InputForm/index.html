@@ -30,13 +30,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
 
+    <!-- D3 v4 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
     <!-- My files -->
     <script type="text/javascript" src="../script/main.js"></script>
     <link rel="stylesheet" href="../css/master.css">
-    <style>
 
-</style>
   </head>
+
   <body>
 
     <div class="jumbotron" id="jumbo">
@@ -50,45 +52,30 @@
       <div class="col-md-4 col-lg-4 col-xl-4" id="inputform">
         <div class="form-group">
           <label for="idOS">OS</label>
-            <select class="form-control"  id="idOS">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
+          <select class="js-basic-multiple js-example-data-array" multiple="multiple" id="idOS">
+          </select>
         </div>
         <div class="form-group">
             <label for="idLang">Language</label>
-            <select class="form-control" id="idLang">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+            <select class="js-basic-multiple" multiple="multiple" id="idLang">
             </select>
         </div>
         <div class="form-group">
             <label for="idProg">Programs or Packages</label>
-            <select class="form-control" id="idProg">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+            <select class="js-basic-multiple" multiple="multiple" id="idProg">
             </select>
         </div>
         <div class="form-group">
             <label for="idConcep">Features or Concepts</label>
-            <select class="form-control" id="idConcep">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+            <select class="js-basic-multiple" multiple="multiple" id="idConcep">
             </select>
         </div>
-        <button type="submit" class="btn btn-success">Jump</button>
+        <div class="form-group">
+            <label for="idOthers">Others</label>
+            <select class="js-basic-multiple" multiple="multiple" id="idOthers">
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success" id="jump">Jump</button>
       </div>
 
       <div class="col-md-7 col-lg-7 col-xl-7 table-responsive-md table-responsive-lg table-responsive-xl" id="resultsection">
