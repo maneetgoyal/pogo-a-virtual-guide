@@ -22,9 +22,9 @@ def parastripping(csvpath, outputpath):
             df = pd.DataFrame({'id': data['id'], 'title': data['title'], 'body': data['body']})
             df.to_csv(outputpath)
         except PermissionError:
-            print("Permission to open the file denied")
+            print("Permission to open the output file denied")
     except PermissionError:
-        print("Permission to open the file denied")
+        print("Permission to open input the file denied")
 
 
 parastripping("questions0.csv", "out0.csv")

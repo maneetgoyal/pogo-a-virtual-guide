@@ -1,3 +1,5 @@
+>
+<
 a
 able
 about
@@ -59,7 +61,6 @@ at
 available
 away
 awfully
-b
 back
 backward
 backwards
@@ -87,7 +88,6 @@ both
 brief
 but
 by
-c
 came
 can
 cannot
@@ -119,7 +119,6 @@ couldn't
 course
 c's
 currently
-d
 dare
 daren't
 definitely
@@ -138,7 +137,6 @@ don't
 down
 downwards
 during
-e
 each
 edu
 eg
@@ -166,7 +164,6 @@ ex
 exactly
 example
 except
-f
 fairly
 far
 farther
@@ -189,7 +186,6 @@ four
 from
 further
 furthermore
-g
 get
 gets
 getting
@@ -202,7 +198,6 @@ gone
 got
 gotten
 greetings
-h
 had
 hadn't
 half
@@ -239,7 +234,6 @@ how
 howbeit
 however
 hundred
-i
 i'd
 ie
 if
@@ -270,16 +264,13 @@ its
 it's
 itself
 i've
-j
 just
-k
 keep
 keeps
 kept
 know
 known
 knows
-l
 last
 lately
 later
@@ -301,7 +292,6 @@ looks
 low
 lower
 ltd
-m
 made
 mainly
 make
@@ -331,7 +321,6 @@ must
 mustn't
 my
 myself
-n
 name
 namely
 nd
@@ -365,7 +354,6 @@ notwithstanding
 novel
 now
 nowhere
-o
 obviously
 of
 off
@@ -396,7 +384,6 @@ outside
 over
 overall
 own
-p
 particular
 particularly
 past
@@ -410,11 +397,8 @@ presumably
 probably
 provided
 provides
-q
 que
 quite
-qv
-r
 rather
 rd
 re
@@ -429,7 +413,7 @@ relatively
 respectively
 right
 round
-s
+'s
 said
 same
 saw
@@ -484,7 +468,6 @@ sub
 such
 sup
 sure
-t
 take
 taken
 taking
@@ -555,7 +538,6 @@ trying
 t's
 twice
 two
-u
 un
 under
 underneath
@@ -576,15 +558,12 @@ useful
 uses
 using
 usually
-v
 value
 various
 versus
 very
 via
-viz
 vs
-w
 want
 wants
 was
@@ -642,8 +621,6 @@ wonder
 won't
 would
 wouldn't
-x
-y
 yes
 yet
 you
@@ -655,5 +632,3 @@ yours
 yourself
 yourselves
 you've
-z
-zero

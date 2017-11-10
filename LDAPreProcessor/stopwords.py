@@ -3,7 +3,7 @@ import re
 
 def getstopwordlist():
     # Spacy's Stop word list
-    from spacy.en.language_data import STOP_WORDS
+    from spacy.lang.en.stop_words import STOP_WORDS
     count_Spacy = len(STOP_WORDS)
 
     # Stop words from Link Assistant
@@ -19,8 +19,10 @@ def getstopwordlist():
 
     # Desired List
     union_set = link_assistant_set.union(STOP_WORDS)  # 'set' of 683 words # include empty '' also
+    #diff_set = link_assistant_set.difference(STOP_WORDS)
     try:
         union_set.remove('')
     except KeyError:
         print("'' wasn't there in the union set.")
-    return union_set  # 'set' of 683 words
+
+    return union_set

@@ -1,25 +1,41 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
 div{
   /*border: 1px solid black;*/
-}
-
-#jumbo{
-  margin: 0;
-  background-image: url("../media/monkey/Monkey(4).png");
-  background-color:white;
-  background-repeat: no-repeat;
-  background-size: 10%;
-  background-position: right center;
-  padding: auto;
-}
-
-#inputform, #resultsection{
-  display: inline-table;
-}
-
-#resultsection{
-  padding-left: 5%;
+  box-sizing: border-box;
 }
 
 .js-basic-multiple{
   width: 100%;
+}
+
+.table{
+  text-align: center;
+}
+
+.btn{
+  cursor: pointer;
+}
+
+.mydivs{
+  display: inline-table;
+}
+
+#jumbo{
+  margin: 0;
+  background-color: white;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid gray;
+  border-radius: 0px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-bottom: 4vh;
+}
+
+#jump{
+  width: 100%;
+  margin-top: 2vh;
 }
