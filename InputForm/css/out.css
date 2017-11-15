@@ -1,0 +1,32 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+div{
+  /*border: 1px solid black;*/
+  box-sizing: border-box;
+}
+
+.mygauges{
+  display: inline-table;
+  height: 40vh;
+  width: 31vw;
+  text-align: center;
+  padding:0 7%;
+}
+
+.btn{
+  cursor: pointer;
+}
+
+#jumbo{
+  margin: 0;
+  background-color: white;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid gray;
+  border-radius: 0px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin-bottom: 4vh;
+}
