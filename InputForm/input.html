@@ -78,7 +78,7 @@
         <button type="submit" class="btn btn-success" id="jump">Search</button>
       </div>
 
-      <div class="col-md-4 col-lg-4 col-xl-4 mydivs table-responsive-md table-responsive-lg table-responsive-xl" id="suggestions">
+      <div class="col-md-3 col-lg-3 col-xl-3 mydivs table-responsive-md table-responsive-lg table-responsive-xl" id="suggestions">
         <p style="text-align: center;">You can pick the suggestions below to refine your search.</p>
         <table class="table">
           <thead>
@@ -90,29 +90,29 @@
           </thead>
           <tbody>
             <tr>
-              <td>Sugestion A1</td>
-              <td>Sugestion B1</td>
-              <td>Sugestion C1</td>
+              <td draggable="true" class="draggableEle">Suggestion A1</td>
+              <td draggable="true" class="draggableEle">Suggestion B1</td>
+              <td draggable="true" class="draggableEle">Suggestion C1</td>
             </tr>
             <tr>
-              <td>Sugestion A2</td>
-              <td>Sugestion B2</td>
-              <td>Sugestion C3</td>
+              <td draggable="true" class="draggableEle">Suggestion A2</td>
+              <td draggable="true" class="draggableEle">Suggestion B2</td>
+              <td draggable="true" class="draggableEle">Suggestion C3</td>
             </tr>
             <tr>
-              <td>Sugestion A3</td>
-              <td>Sugestion B3</td>
-              <td>Sugestion C3</td>
+              <td draggable="true" class="draggableEle">Suggestion A3</td>
+              <td draggable="true" class="draggableEle">Suggestion B3</td>
+              <td draggable="true" class="draggableEle">Suggestion C3</td>
             </tr>
             <tr>
-              <td>Sugestion A4</td>
-              <td>Sugestion B4</td>
-              <td>Sugestion C4</td>
+              <td draggable="true" class="draggableEle">Suggestion A4</td>
+              <td draggable="true" class="draggableEle">Suggestion B4</td>
+              <td draggable="true" class="draggableEle">Suggestion C4</td>
             </tr>
             <tr>
-              <td>Sugestion A5</td>
-              <td>Sugestion B5</td>
-              <td>Sugestion C5</td>
+              <td draggable="true" class="draggableEle">Suggestion A5</td>
+              <td draggable="true" class="draggableEle">Suggestion B5</td>
+              <td draggable="true" class="draggableEle">Suggestion C5</td>
             </tr>
             <tr>
               <td><button type="button" class="btn btn-info">Load More</button></td>
@@ -123,8 +123,14 @@
         </table>
       </div>
 
-      <div class="col-md-3 col-lg-3 col-xl-3 mydivs">
-        dcd
+      <div class="col-md-3 col-lg-3 col-xl-3 mydivs" id="dragdiv">
+        <p style="text-align: center;">Drag your selected tags here.</p>
+        <hr>
+        <div>
+          <ul class="list-group" id="innerdragdiv">
+
+          </ul>
+        </div>
       </div>
 
     </div>

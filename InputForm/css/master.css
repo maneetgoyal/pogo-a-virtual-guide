@@ -24,6 +24,25 @@ div{
   display: inline-table;
 }
 
+td.draggableEle{
+  cursor: move;
+}
+
+td.draggableEle:hover{
+  background-color: #f9f9f9;
+}
+
+li.list-group-item:hover{
+  background-color: #f9f9f9;
+}
+
+span.badge{
+  float: right;
+  cursor: pointer;
+  background-color: grey;
+  color: white;
+}
+
 #jumbo{
   margin: 0;
   background-color: white;
@@ -38,4 +57,9 @@ div{
 #jump{
   width: 100%;
   margin-top: 2vh;
+}
+
+#innerdragdiv{
+  height: 60vh;
+  overflow-y: auto;
 }

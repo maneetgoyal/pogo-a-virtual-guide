@@ -1,6 +1,4 @@
 # Importing Other party libraries
-import warnings
-warnings.filterwarnings(action='ignore', category=UserWarning, module='gensim')
 import string
 import re
 
