@@ -19,25 +19,7 @@ import stopwords
 # Import Pandas
 import pandas as pd
 
-
-class Partitioner:
-
-    def __init__(self, ldamodel_path, dictionary_path, corpus_path):
-        # LDA Attributes
-        self.ldamodel = LdaModel.load(ldamodel_path)
-        self.dictionary = Dictionary.load(dictionary_path)
-        self.corpus = corpora.MmCorpus(corpus_path)
-
-    def get_lda(self):
-        return list(self.ldamodel)
-
-    def get_dictionary(self):
-        return self.dictionary
-
-    def get_corpus(self):
-        return self.corpus
-
-    def word_checker(w1, dict_stop_words, table, num_table):
+def word_checker(w1, dict_stop_words, table, num_table):
          # POS Filter
         if w1.is_stop or w1.is_punct or w1.like_num or w1.like_url or w1.like_email:
             # wl must not be stop word, punctuation mark, a numeric (1, billion), a URL or e-mail ID.
@@ -56,6 +38,25 @@ class Partitioner:
             return False
 
         return True
+
+class Partitioner:
+
+    def __init__(self, ldamodel_path, dictionary_path, corpus_path):
+        # LDA Attributes
+        self.ldamodel = LdaModel.load(ldamodel_path)
+        self.dictionary = Dictionary.load(dictionary_path)
+        self.corpus = corpora.MmCorpus(corpus_path)
+
+    def get_lda(self):
+        return list(self.ldamodel)
+
+    def get_dictionary(self):
+        return self.dictionary
+
+    def get_corpus(self):
+        return self.corpus
+
+   
 
     def assign_bucket(self, input_string, input_tags):
         # df = pd.read_csv(input_filepath)
@@ -81,9 +82,10 @@ class Partitioner:
         # Text to List # Processing is similar to what was done by Linares-Vasquez et al.
 
         # Variables used for corpus
-        texts = []
+        # texts = []
+        # article = []
         article = []
-
+        texts = []
         doc = nlp(input_string)
 
         all_puncts = string.punctuation.replace( ".", "") + string.whitespace
@@ -93,28 +95,34 @@ class Partitioner:
 
         for word in doc:
             if word_checker(word, dict_stop_words, table, num_table): 
-                article.append(w.lemma_.translate(table))
+                article.append(word.lemma_.translate(table))
         texts.append(article)
+        
             # input_list = ast.literal_eval(row['tags'])
         input_list = ast.literal_eval(input_tags)
         input_corpus = self.dictionary.doc2bow(input_list)
         output_topics = sorted(list(self.ldamodel[input_corpus]), key=lambda tup: tup[1], reverse=True)
+        print(output_topics)
         selected_topics = output_topics[0]
-
         #ldamodel_chosen based on topic from corpus
-        ldamodel_chosen = LdaModel.load("./multicore_4pass/Bucket" + str(selected_topics[0][0]) + "LDA")
-        dictionary_chosen = Dictionary.load("./bucket_processed/dict" + str(selected_topics[0][0]) + ".dict")
+        ldamodel_chosen = LdaModel.load("./multicore_4pass/Bucket" + str(selected_topics[0]) + "LDA")
+        dictionary_chosen = Dictionary.load("./bucket_processed/dict" + str(selected_topics[0]) + ".dict")
         # corpus_chosen = corpora.MmCorpus("./bucket_processed/corpus" + str(selected_topics[0][0]) + ".mm")
-        input_corpus_chosen = dictionary_chosen.doc2bow(texts)
+        for text in texts:
+         input_corpus_chosen = dictionary_chosen.doc2bow(text) 
 
-        
-        output_topics_chosen = sorted(list(ldamodel_chosen[input_corpus_chosen]), key=lambda tup: tup[1], reverse=True)
+        # print(input_corpus_chosen)
+        output_topics_chosen = sorted(list(ldamodel_chosen[input_corpus_chosen]), key=lambda tup: tup[1],reverse=True) 
+        # print(output_topics_chosen)
 
-
-        selected_topics_chosen = output_topics_chosen[0:2]
-        for i in range (0, 3):
-         df.at[i, 'Topic1'] = ldamodel_chosen.print_topic(selected_topics_chosen[i][0], topn = 5)
-
+        selected_topics_chosen = output_topics_chosen[0:3]
+        print(len(selected_topics_chosen))    
+        df = pd.DataFrame()
+        # print()
+        # print( t1 )
+        for i in range(0,3):
+            df.at[i,'Topics'] = ldamodel_chosen.print_topic(selected_topics_chosen[i][0], topn = 5)
+       
         # df.at[i, 'Bucket1'] = selected_topics[0][0]
         # df.at[i, 'Bucket1Prob'] = selected_topics[0][1]
         # df.at[i, 'Bucket2'] = selected_topics[1][0]
@@ -123,8 +131,8 @@ class Partitioner:
         #     print(i)
 
 
-         df.to_csv( "query_result.csv", index=False)
-         return 0
+        df.to_csv( "query_result.csv") #writes query output to csv
+        return 0
 
 
 class Advisor:
