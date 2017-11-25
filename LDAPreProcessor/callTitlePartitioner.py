@@ -1,11 +1,14 @@
-import titlepartitioner as bp
+import titlepartitioner as tp
 
+# Instantiating the titlepar
+assistant_and_advisor = tp.SuperPartitioner\
+    (ldamodel_path=r"G:\References\MS1\Fall2017\CSE6242\Project\Pogo\PogoGit\LDA4PassModel\fi",
+     dictionary_path="G:\References\MS1\Fall2017\CSE6242\Project\Pogo\TagsCorpusAndDictionary\dict_final.dict",
+     corpus_path=r"G:\References\MS1\Fall2017\CSE6242\Project\Pogo\TagsCorpusAndDictionary\corpus_final.mm")
 
-
-my_partitioner = bp.Partitioner(ldamodel_path="./tag_processed/fi", dictionary_path="tag_processed/dict_final.dict",
-                                corpus_path="tag_processed/corpus_final.mm")
-
+# Calling class methods
+tp.SuperPartitioner.extend_stopwords()
 
 # for i in range(9, 11):
-placeholder_0 = my_partitioner.assign_bucket(input_string="learn d3 visualization", input_tags = '["d3", "javascript", "viz"]')
-    # print("{} is done!".format(i))
+placeholder_0 = assistant_and_advisor.assign_bucket(input_string="learn the basics of front end web-development concepts",
+                                                    input_tags='["javascript", "jquery"]')
