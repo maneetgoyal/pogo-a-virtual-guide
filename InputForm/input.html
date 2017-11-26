@@ -53,35 +53,37 @@
         <div class="alert alert-primary" style="width:98%;">
           <strong>First, select your query tags.</strong>
         </div>
-        <div class="form-group">
-          <label for="idOS">OS</label>
-          <select class="js-basic-multiple" multiple="multiple" id="idOS">
-          </select>
-        </div>
-        <div class="form-group">
-            <label for="idLang">Language</label>
-            <select class="js-basic-multiple" multiple="multiple" id="idLang">
+        <form class="" action="index.html" method="post">
+          <div class="form-group">
+            <label for="idOS">OS</label>
+            <select class="js-basic-multiple" multiple="multiple" id="idOS">
             </select>
-        </div>
-        <div class="form-group">
-            <label for="idProg">Programs or Packages</label>
-            <select class="js-basic-multiple" multiple="multiple" id="idProg">
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="idConcep">Features or Concepts</label>
-            <select class="js-basic-multiple" multiple="multiple" id="idConcep">
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="idOthers">Others</label>
-            <select class="js-basic-multiple" multiple="multiple" id="idOthers">
-            </select>
-        </div>
-        <div class="alert alert-warning" style="width:100%;">
-          <strong>Consider adding suggested tags and a detailed query for better results.</strong>
-        </div>
-        <button type="submit" class="btn btn-success" id="jump">Search</button>
+          </div>
+          <div class="form-group">
+              <label for="idLang">Language*</label>
+              <select class="js-basic-multiple" multiple="multiple" id="idLang" required>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="idProg">Programs or Packages</label>
+              <select class="js-basic-multiple" multiple="multiple" id="idProg">
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="idConcep">Features or Concepts*</label>
+              <select class="js-basic-multiple" multiple="multiple" id="idConcep" required>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="idOthers">Others</label>
+              <select class="js-basic-multiple" multiple="multiple" id="idOthers">
+              </select>
+          </div>
+          <div class="alert alert-warning" style="width:100%;">
+            <strong>Consider adding suggested tags and a detailed query for better results.</strong>
+          </div>
+          <button type="submit" class="btn btn-success" id="jump">Search</button>
+        </form>
       </div>
 
       <div class="col-md-4 col-lg-4 col-xl-4 mydivs table-responsive-md table-responsive-lg table-responsive-xl" id="suggestions">
@@ -114,14 +116,14 @@
             </tr>
           </tbody>
         </table>
-        <button type="button" class="btn btn-success" id="loader">Load More</button>
+        <button type="button" class="btn btn-success" id="firstloader">Load Suggestions</button>
         <div class="alert alert-primary" style="width:100%;">
           <strong>Third, enter a detailed query under 280 Characters.</strong>
         </div>
         <div class="form-group">
           <textarea class="form-control" name="detailedinput" rows="5" style="width:100%" placeholder="Type in your detailed query." maxlength="280"></textarea>
         </div>
-        <div class="alert alert-success">
+        <div class="alert alert-primary">
           <strong>Finally, hit search if you are done.</strong>
         </div>
       </div>

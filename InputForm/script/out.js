@@ -49,7 +49,8 @@ function drawChart() {
             duration: 3000,
             easing: 'out',
           },
-          minorTicks: 5
+          minorTicks: 5,
+          max: max_Reliability
         };
 
         var options3 = {
@@ -61,7 +62,8 @@ function drawChart() {
             duration: 3000,
             easing: 'out',
           },
-          minorTicks: 5
+          minorTicks: 5,
+          max: max_Popularity
         };
 
         // Binding gauges to their corresponding divs

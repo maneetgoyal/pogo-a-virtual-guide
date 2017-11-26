@@ -54,7 +54,7 @@ span.badge{
   margin-bottom: 4vh;
 }
 
-#loader, #jump{
+#jump, #firstloader{
   width: 100%;
   margin-bottom: 2vh;
 }
