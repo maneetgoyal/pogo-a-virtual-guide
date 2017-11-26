@@ -6,7 +6,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
 
         // Maximum Values of different Scores
-        var max_Assistance = 100;
+        var max_Assistance = 1000;
         var max_Reliability = 100;
         var max_Popularity = 100;
 
@@ -29,14 +29,15 @@ function drawChart() {
         // Feeding styling options for each gauge
         var options1 = {
           width: $("#AssistScore").width(), height: $("#AssistScore").height(),
-          redFrom: 0, redTo: 15,
-          greenFrom: 75, greenTo: 100,
-          yellowFrom:50, yellowTo: 75,
+          redFrom: 0, redTo: 400,
+          greenFrom: 600, greenTo: 1000,
+          yellowFrom:400, yellowTo: 600,
           animation:{
             duration: 3000,
             easing: 'out',
           },
-          minorTicks: 5
+          minorTicks: 5,
+          max: max_Assistance
         };
 
         var options2 = {
@@ -78,7 +79,7 @@ function drawChart() {
         chart3.draw(data3, options3);
 
         // Setting Actual Values
-        data1.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+        data1.setValue(0, 1, 40 + Math.round(600 * Math.random()));
         data2.setValue(0, 1, 40 + Math.round(60 * Math.random()));
         data3.setValue(0, 1, 40 + Math.round(60 * Math.random()));
 

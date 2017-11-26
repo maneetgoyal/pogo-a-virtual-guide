@@ -50,6 +50,9 @@
 
     <div class="container-fluid">
       <div class="col-md-4 col-lg-4 col-xl-4 mydivs" id="inputform">
+        <div class="alert alert-primary" style="width:98%;">
+          <strong>First, select your query tags.</strong>
+        </div>
         <div class="form-group">
           <label for="idOS">OS</label>
           <select class="js-basic-multiple" multiple="multiple" id="idOS">
@@ -75,11 +78,16 @@
             <select class="js-basic-multiple" multiple="multiple" id="idOthers">
             </select>
         </div>
+        <div class="alert alert-warning" style="width:100%;">
+          <strong>Consider adding suggested tags and a detailed query for better results.</strong>
+        </div>
         <button type="submit" class="btn btn-success" id="jump">Search</button>
       </div>
 
       <div class="col-md-4 col-lg-4 col-xl-4 mydivs table-responsive-md table-responsive-lg table-responsive-xl" id="suggestions">
-        <p style="text-align: center;">You can pick the suggestions below to refine your search.</p>
+        <div class="alert alert-primary">
+          <strong>Second, pick a few suggestions below to refine your search.</strong>
+        </div>
         <table class="table">
           <thead>
             <tr>
@@ -104,28 +112,35 @@
               <td draggable="true" class="draggableEle">Suggestion B3</td>
               <td draggable="true" class="draggableEle">Suggestion C3</td>
             </tr>
-            <tr>
-              <td draggable="true" class="draggableEle">Suggestion A4</td>
-              <td draggable="true" class="draggableEle">Suggestion B4</td>
-              <td draggable="true" class="draggableEle">Suggestion C4</td>
-            </tr>
-            <tr>
-              <td draggable="true" class="draggableEle">Suggestion A5</td>
-              <td draggable="true" class="draggableEle">Suggestion B5</td>
-              <td draggable="true" class="draggableEle">Suggestion C5</td>
-            </tr>
           </tbody>
         </table>
-        <button type="button" class="btn btn-info" id="loader">Load More</button>
+        <button type="button" class="btn btn-success" id="loader">Load More</button>
+        <div class="alert alert-primary" style="width:100%;">
+          <strong>Third, enter a detailed query under 280 Characters.</strong>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="detailedinput" rows="5" style="width:100%" placeholder="Type in your detailed query." maxlength="280"></textarea>
+        </div>
+        <div class="alert alert-success">
+          <strong>Finally, hit search if you are done.</strong>
+        </div>
       </div>
 
       <div class="col-md-3 col-lg-3 col-xl-3 mydivs" id="dragdiv">
-        <p style="text-align: center;">Drag your selected tags here.</p>
+        <div class="alert alert-info" style="width:100%;">
+          <strong>Drag your selected tags here.</strong>
+        </div>
         <hr>
         <div>
           <ul class="list-group" id="innerdragdiv">
-
           </ul>
+        </div>
+        <div class="card bg-info">
+          <img class="card-img-top img-fluid" src="./media/monkey/Monkey(4).png" alt="Card image" style="width:50%; margin-left:auto; margin-right:auto;">
+          <div class="card-body">
+            <h4 class="card-title">Pogo G.</h4>
+            <a href="#" class="btn btn-primary">Contact Team</a>
+          </div>
         </div>
       </div>
 

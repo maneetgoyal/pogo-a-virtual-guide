@@ -56,10 +56,10 @@ span.badge{
 
 #loader, #jump{
   width: 100%;
-  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 #innerdragdiv{
-  height: 60vh;
+  height: 37vh;
   overflow-y: auto;
 }
