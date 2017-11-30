@@ -97,7 +97,7 @@ class SuperPartitioner:
         # appropriate bucket based LDA model.
 
         # Loading the appropriate bucket based LDA model and dictionary
-        ldamodel_chosen = LdaModel.load(r"G:\References\MS1\Fall2017\CSE6242\Project\Pogo\TrainedModels\AdvisorModels\ldamodel" + str(selected_topics[0]))
+        ldamodel_chosen = LdaModel.load(r"G:\References\MS1\Fall2017\CSE6242\Project\Pogo\TrainedModels\AdvisorModels\bucket" + str(selected_topics[0]) + "LDA")
         dictionary_chosen = Dictionary.load(r"G:\References\MS1\Fall2017\CSE6242\Project\Pogo\BucketedDatabase\Buckets\QuestionTitlesCorpusandDictionary\dict" + str(selected_topics[0]) + ".dict")
 
         input_corpus_chosen = dictionary_chosen.doc2bow(article)  # Creating bag of words out of the article

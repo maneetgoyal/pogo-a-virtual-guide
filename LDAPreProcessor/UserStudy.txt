@@ -1,0 +1,61 @@
+3(input_string="i want to learn xslt and openxml",input_tags='["xslt", "xml"]')
+Topics
+0	0.076*"xml" + 0.045*"xslt" + 0.035*"element" + 0.031*"file" + 0.023*"react"
+1	0.028*"function" + 0.026*"component" + 0.018*"query" + 0.015*"table" + 0.014*"image"
+2	0.097*"git" + 0.053*"file" + 0.029*"branch" + 0.022*"jenkins" + 0.022*"commit"
+
+1(input_string="how to declare a tuple in python",input_tags='["python", "tuple"]')
+Topics
+0	0.148*"python" + 0.099*"file" + 0.047*"string" + 0.022*"line" + 0.021*"text"
+1	0.120*"python" + 0.099*"list" + 0.037*"function" + 0.030*"loop" + 0.024*"variable"
+2	0.051*"python" + 0.020*"error" + 0.018*"code" + 0.015*"flask" + 0.015*"time"
+
+
+1(input_string="how to implement parallel programming in matlab",input_tags='["matlab", "parfor", "multithreading"]')
+Topics
+0	0.121*"matlab" + 0.053*"function" + 0.023*"datum" + 0.016*"variable" + 0.016*"array"
+1	0.060*".htaccess" + 0.060*"url" + 0.050*"matrix" + 0.038*"htaccess" + 0.029*"vector"
+2	0.079*"file" + 0.024*"image" + 0.020*"directory" + 0.017*"parameter" + 0.017*"audio"
+
+1(input_string="how to perform data visualization using javascript", input_tags='["visualization", "javascript"]')
+Topics
+0	0.066*"file" + 0.051*"error" + 0.034*"js" + 0.027*"datum" + 0.024*"image"
+1	0.093*"javascript" + 0.072*"function" + 0.028*"chrome" + 0.028*"variable" + 0.026*"page"
+2	0.057*"object" + 0.042*"javascript" + 0.026*"array" + 0.019*"property" + 0.018*"event"
+
+1(input_string="how to implement logistic regression in r",input_tags='["regression", "r"]')
+Topics
+0	0.094*"r" + 0.030*"column" + 0.029*"function" + 0.024*"datum" + 0.017*"string"
+1	0.033*"error" + 0.019*"as3" + 0.016*"silverlight" + 0.015*"flash" + 0.013*"access"
+2	0.027*"selenium" + 0.024*"page" + 0.023*"text" + 0.015*"element" + 0.015*"file"
+
+4(input_string="learn the basics of front end web-development concepts",input_tags='["javascript", "jquery"]')
+Topics
+0	0.053*"form" + 0.046*"button" + 0.046*"input" + 0.029*"field" + 0.028*"text"
+1	0.112*"ajax" + 0.077*"jquery" + 0.046*"datum" + 0.036*"html" + 0.032*"javascript"
+2	0.088*"jquery" + 0.068*"page" + 0.043*"image" + 0.032*"class" + 0.028*"content"
+
+------
+3(input_string="i have a sql server database and access to microsoft azure. how do I create a web app which links the sql server database to a website",input_tags='["azure", "sql-server", "backend", "frontend"]')
+Topics
+0	0.031*"app" + 0.028*"azure" + 0.025*"api" + 0.024*"android" + 0.019*"phonegap"
+1	0.066*"file" + 0.051*"error" + 0.034*"js" + 0.027*"datum" + 0.024*"image"
+2	0.057*"object" + 0.042*"javascript" + 0.026*"array" + 0.019*"property" + 0.018*"event"
+
+1(input_string="how do i implement branch and bound algorithms in traveling salesman problem",input_tags='["algorithm", "branch-and-bound", "python", "traveling-salesman", "graph-algorithm"]')
+Topics
+0	0.025*"array" + 0.025*"element" + 0.024*"function" + 0.023*"php" + 0.020*"thread"
+1	0.079*"array" + 0.046*"string" + 0.045*"java" + 0.038*"c" + 0.032*"object"
+2	0.058*"java" + 0.039*"error" + 0.025*"code" + 0.023*"android" + 0.015*"eclipse"
+
+1(input_string="how do i implement discrete-event simulation in python",input_tags='["python", "simulation", "scheduling"]')
+Topics
+0	0.078*"django" + 0.036*"facebook" + 0.023*"app" + 0.023*"user" + 0.022*"error"
+1	0.078*"css" + 0.036*"html" + 0.028*"page" + 0.024*"class" + 0.022*"jquery"
+2	0.054*"file" + 0.024*"window" + 0.022*"video" + 0.020*"windows" + 0.016*"android"
+
+3(input_string="how do i prevent sql injection in php",input_tags='["php", "mysql", "sql", "security", "sql-injection"]')
+Topics
+0	0.134*"php" + 0.064*"file" + 0.037*"datum" + 0.034*"database" + 0.026*"variable"
+1	0.111*"mysql" + 0.067*"table" + 0.057*"query" + 0.039*"sql" + 0.032*"column"
+2	0.063*"php" + 0.042*"string" + 0.040*"array" + 0.038*"image" + 0.012*"key"

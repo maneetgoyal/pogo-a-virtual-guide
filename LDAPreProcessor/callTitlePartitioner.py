@@ -10,5 +10,5 @@ assistant_and_advisor = tp.SuperPartitioner\
 tp.SuperPartitioner.extend_stopwords()
 
 # for i in range(9, 11):
-placeholder_0 = assistant_and_advisor.assign_bucket(input_string="learn the basics of front end web-development concepts",
-                                                    input_tags='["javascript", "jquery"]')
+placeholder_0 = assistant_and_advisor.assign_bucket(input_string="how do i prevent sql injection in php",
+                                                    input_tags='["php", "mysql", "sql", "security", "sql-injection"]')
