@@ -6,8 +6,9 @@ Description
 This is the code that has gone into the making of Pogo. It includes the following:
 
 1. Input and Output form (Front-end elements)
-2. Data preprocessing scripts (Preprocessing of Stack Overflow and GitHub data acquired from Google BigQuery)
-3. Graph Analytics ( An implementation of suggestions for user query as well as a dependency graph
+2. Data preprocessing scripts: Preprocessing of Stack Overflow, GitHub and Libraries.io data acquired from Google BigQuery.
+3. Graph Analytics: An implementation of suggestions for user query(input) as well as a dependency graph for packages(output) using the neo4j graph database on the Libraries.io dataset. 
+4. Topic Modelling: An implementation of a two-fold LDA(Latent Dirichlet Association) model on Stack Overflow question tags and titles to obtain buzzing topics.
 
 Installation
 Setting up Neo4j for the Dependency Graph.
