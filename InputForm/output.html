@@ -5,6 +5,31 @@
     <meta charset="utf-8">
     <title>Results | Pogo</title>
 
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/d3.v3.min.js"></script>
+    <style>
+
+    path.link {
+      fill: none;
+      stroke: #666;
+      stroke-width: 1.5px;
+    }
+
+    circle {
+      fill: #ccc;
+      stroke: #fff;
+      stroke: black;
+      stroke-width: 1.5px;
+    }
+
+    text {
+      fill: #000;
+      font-size: 8px;
+      pointer-events: none;
+    }
+
+    </style>
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="../media/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../media/favicons/favicon-32x32.png">
@@ -41,14 +66,228 @@
         <p>Your Programming Project Advisor</p>
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="mygauges" id="AssistScore">
-      </div>
-      <div class="mygauges" id="RelyScore">
-      </div>
-      <div class="mygauges" id="PopScore">
-      </div>
-    </div>
+    <div class="row container-fluid">
+        <div class="col-lg-2 text-lg-center">
+            <div class="row"><h3>Metrics</h3></div>
+            <div class="row myguages" id="AssistScore"></div>
+            <div class="row myguages" id="RelyScore"></div>
+            <div class="row myguages" id="PopScore"></div>
+        </div>
+        <div class="col-lg-6 text-lg-center">
+          <div class="row" style="text-align:center"><h3>Dependency Graph</h3></div>
+          <div class="row graph"></div>
+          <script type="text/javascript">
+            window.onload = post_cypherquery();
+            function post_cypherquery() {
+              $('#messageArea').html('<h3>(loading)</h3>');
 
+              $.ajax({
+                  url: "http://localhost:7474/db/data/transaction/commit",
+                  type: 'POST',
+                  data: JSON.stringify({ "statements": [{ "statement": "MATCH k=(n:Project)-[:Kind]->(m:Dependency) WHERE n.name='prettify' RETURN k LIMIT 15" , "resultDataContents" : ["graph"]}] }),
+                  contentType: 'application/json',
+                  accept: 'application/json; charset=UTF-8'                
+              }).done(function (data) {
+                  $('#resultsArea').text(JSON.stringify(data));
+
+                  // Process the data.
+                  function idIndex(a,id) {
+                for (var i=0;i<a.length;i++) {
+                  if (a[i].id == id) return i;}
+                return null;
+              }
+
+              function getType(r) {
+                  if(r.properties.dep_kind != null) {
+                      return r.properties.dep_kind;
+                    }
+              }
+
+              var nodes=[], links=[];
+              data.results[0].data.forEach(function (row) {
+                 row.graph.nodes.forEach(function (n) {
+                   if (idIndex(nodes,n.id) == null)
+                     nodes.push({id:n.id,label:n.labels[0],title:n.properties.name});
+                 });
+                 links = links.concat( row.graph.relationships.map(function(r) {
+                   return {source:idIndex(nodes,r.startNode),target:idIndex(nodes,r.endNode),type:getType(r)};
+                 }));
+              });
+
+              dataset = {nodes:nodes, edges:links};
+
+                var w = 750;
+                var h = 500;
+                var linkDistance=180;
+                var colors = d3.scale.category20();
+             
+                var svg = d3.select(".graph").append("svg").attr({"width":w,"height":h});
+                var force = d3.layout.force()
+                    .nodes(dataset.nodes)
+                    .links(dataset.edges)
+                    .size([w,h])
+                    .linkDistance([linkDistance])
+                    .charge([-500])
+                    .theta(0.1)
+                    .gravity(0.05)
+                    .start();
+             
+                var edges = svg.selectAll("line")
+                  .data(dataset.edges)
+                  .enter()
+                  .append("line")
+                  .attr("id",function(d,i) {return 'edge'+i})
+                  .attr('marker-end','url(#arrowhead)')
+                  .style("stroke","#ccc")
+                  .style("pointer-events", "none");
+                
+                var nodes = svg.selectAll("circle")
+                  .data(dataset.nodes)
+                  .enter()
+                  .append("circle")
+                  .attr({"r":30})
+                  .style("fill",function(d,i){return colors(i);})
+                  .call(force.drag)
+
+                var nodelabels = svg.selectAll(".nodelabel") 
+                   .data(dataset.nodes)
+                   .enter()
+                   .append("text")
+                   .attr({"text-anchor":"middle",
+                          "class":"nodelabel"})
+                   .text(function(d){return d.title;});
+
+                var edgepaths = svg.selectAll(".edgepath")
+                    .data(dataset.edges)
+                    .enter()
+                    .append('path')
+                    .attr({'d': function(d) {return 'M '+d.source.x+' '+d.source.y+' L '+ d.target.x +' '+d.target.y},
+                           'class':'edgepath',
+                           'fill-opacity':0,
+                           'stroke-opacity':0,
+                           'fill':'blue',
+                           'stroke':'red',
+                           'id':function(d,i) {return 'edgepath'+i}})
+                    .style("pointer-events", "none");
+
+                var edgelabels = svg.selectAll(".edgelabel")
+                    .data(dataset.edges)
+                    .enter()
+                    .append('text')
+                    .style("pointer-events", "none")
+                    .attr({'class':'edgelabel',
+                           'id':function(d,i){return 'edgelabel'+i},
+                           'dx':80,
+                           'dy':0,
+                           'font-size':12,
+                           'fill':'#aaa'});
+
+                edgelabels.append('textPath')
+                    .attr('xlink:href',function(d,i) {return '#edgepath'+i})
+                    .style("pointer-events", "none")
+                    .text(function(d,i){return d.type});
+
+                svg.append('defs').append('marker')
+                    .attr({'id':'arrowhead',
+                           'viewBox':'-0 -5 10 10',
+                           'refX':25,
+                           'refY':0,
+                           'orient':'auto',
+                           'markerWidth':14,
+                           'markerHeight':30,
+                           'xoverflow':'visible'})
+                    .append('svg:path')
+                        .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
+                        .attr('fill', '#ccc')
+                        .attr('stroke','#ccc');
+                 
+                force.on("tick", function(){
+                    edges.attr({"x1": function(d){return d.source.x;},
+                                "y1": function(d){return d.source.y;},
+                                "x2": function(d){return d.target.x;},
+                                "y2": function(d){return d.target.y;}
+                    });
+                    nodes.attr({"cx":function(d){return d.x;},
+                                "cy":function(d){return d.y;}
+                    });
+                    nodelabels.attr("x", function(d) { return d.x; }) 
+                              .attr("y", function(d) { return d.y; });
+                    edgepaths.attr('d', function(d) { var path='M '+d.source.x+' '+d.source.y+' L '+ d.target.x +' '+d.target.y;
+                                                       return path});       
+                    edgelabels.attr('transform',function(d,i){
+                        if (d.target.x<d.source.x){
+                            bbox = this.getBBox();
+                            rx = bbox.x+bbox.width/2;
+                            ry = bbox.y+bbox.height/2;
+                            return 'rotate(180 '+rx+' '+ry+')';
+                            }
+                        else {
+                            return 'rotate(0)';
+                            }
+                        });
+                    });
+                });
+              };
+          </script>
+        </div>
+        <div class="col-lg-4 text-lg-center">
+            <div class="row" style="text-align:center"><h3>Bugging Topics</h3></div>
+            <div>
+                <h2>Buzzing Topics</h2>
+              <p>The following topics are asked for the most:</p>            
+              <table class="table table-condensed">
+                <thead>
+                  <tr>
+                    <th>Topic</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>javascript</td>
+                    <td>89%</td>
+                  </tr>
+                  <tr>
+                    <td>syntax-highlighting</td>
+                    <td>85%</td>
+                  </tr>
+                  <tr>
+                    <td>python</td>
+                    <td>76%</td>
+                  </tr>
+                  <tr>
+                    <td>json</td>
+                    <td>72%</td>
+                  </tr>
+                  <tr>
+                    <td>angularjs</td>
+                    <td>71%</td>
+                  </tr>
+                  <tr>
+                    <td>xml</td>
+                    <td>68%</td>
+                  </tr>
+                  <tr>
+                    <td>html</td>
+                    <td>53%</td>
+                  </tr>
+                  <tr>
+                    <td>documentation</td>
+                    <td>49%</td>
+                  </tr>
+                  <tr>
+                    <td>beautifulsoup</td>
+                    <td>10%</td>
+                  </tr>
+                  <tr>
+                    <td>c#</td>
+                    <td>8%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        </div>
+    </div>
   </body>
 </html>

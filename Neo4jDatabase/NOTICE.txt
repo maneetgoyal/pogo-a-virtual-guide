@@ -1,6 +1,0 @@
-© Network Engine for Objects in Lund AB.  2017. All Rights Reserved.
-Use of this Software without a proper commercial license with
-Neo4j, Inc. or its affiliates is prohibited.
-
-Third-party licenses
-A listing of third-party licenses including full license texts can be found in LICENSES.txt.
