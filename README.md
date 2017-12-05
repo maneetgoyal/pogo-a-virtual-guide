@@ -2,11 +2,11 @@
 A Programming Project Advisor: 
 Project for CSE 6242 which aims to help programmers learn faster via topic modelling and graph analytics
 
-- Description
+Description
 
 
-- Installation
-- Setting up Neo4j for the Dependency Graph.
+Installation
+Setting up Neo4j for the Dependency Graph.
 1. Download and install Neo4j (https://neo4j.com/download/)
 2. Create a new Project in the Neo4j desktop and a new Database under that project.
 3. Click on the "Open Folder" option in your database and then navigate to data/databases folder.
@@ -15,7 +15,7 @@ Project for CSE 6242 which aims to help programmers learn faster via topic model
 6. Wait until the 'Status' changes from "STARTING" to "RUNNING".
 
 
-- Execution
+Execution
 To run the UI, please setup a localhost in the InputForm folder in GitHub/source code.
 A localhost can be set up by running "python -m SimpleHTTPServer 8080" (or any other port number) in the folder.
 Once the localhost is up, open any web browser and go to the URL: "http://localhost:8080/input.html"
