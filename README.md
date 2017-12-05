@@ -3,8 +3,11 @@ A Programming Project Advisor:
 Project for CSE 6242 which aims to help programmers learn faster via topic modelling and graph analytics
 
 Description
-The code in the package enables yo
+This is the code that has gone into the making of Pogo. It includes the following:
 
+1. Input and Output form (Front-end elements)
+2. Data preprocessing scripts (Preprocessing of Stack Overflow and GitHub data acquired from Google BigQuery)
+3. Graph Analytics ( An implementation of suggestions for user query as well as a dependency graph
 
 Installation
 Setting up Neo4j for the Dependency Graph.
