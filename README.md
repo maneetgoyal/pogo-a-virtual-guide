@@ -55,6 +55,10 @@ Installing Python libraries for topic modelling and natural language processing 
 
 Execution
 To run the UI, please setup a localhost in the InputForm folder in GitHub/source code.
-A localhost can be set up by running "python -m SimpleHTTPServer 8080" (or any other port number) in the folder.
+A localhost can be set up by running
+
+"python -m http.server 8080" (or any other port number) in the folder.
+
+
 Once the localhost is up, open any web browser and go to the URL: "http://localhost:8080/input.html"
 The UI will be up and ready for use.
